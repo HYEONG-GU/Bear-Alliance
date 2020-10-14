@@ -1,5 +1,7 @@
 import discord
 import asyncio
+import os
+
 client = discord.Client()
 
 @client.event
@@ -20,4 +22,5 @@ async def on_message(message):
         embed.add_field(name='[개발현황]', value='현재 LUA언어 공부중에 있습니다.\n\u200b\n Made by Bear#1901', inline=True)
         await message.channel.send(embed=embed)
 
-client.run("NzY1ODA2NzcyODQ1NTQzNDQ2.X4aLIg.2NHA5C-m6MjpbedzLAiIcqk9py4")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
